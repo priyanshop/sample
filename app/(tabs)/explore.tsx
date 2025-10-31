@@ -1,12 +1,13 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
+import { AppSkeleton } from '@/components/atoms';
+import { ExternalLink } from '@/components1/external-link';
+import ParallaxScrollView from '@/components1/parallax-scroll-view';
+import { ThemedText } from '@/components1/themed-text';
+import { ThemedView } from '@/components1/themed-view';
+import { Collapsible } from '@/components1/ui/collapsible';
+import { IconSymbol } from '@/components1/ui/icon-symbol';
 import { Fonts } from '@/constants/theme';
 
 export default function TabTwoScreen() {
@@ -22,6 +23,7 @@ export default function TabTwoScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
+        <AppSkeleton />
         <ThemedText
           type="title"
           style={{
@@ -65,7 +67,7 @@ export default function TabTwoScreen() {
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Light and dark mode components">
+      <Collapsible title="Light and dark mode components1">
         <ThemedText>
           This template has light and dark mode support. The{' '}
           <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
@@ -78,7 +80,7 @@ export default function TabTwoScreen() {
       <Collapsible title="Animations">
         <ThemedText>
           This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
+          <ThemedText type="defaultSemiBold">components1/HelloWave.tsx</ThemedText> component uses
           the powerful{' '}
           <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
             react-native-reanimated
@@ -88,7 +90,7 @@ export default function TabTwoScreen() {
         {Platform.select({
           ios: (
             <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
+              The <ThemedText type="defaultSemiBold">components1/ParallaxScrollView.tsx</ThemedText>{' '}
               component provides a parallax effect for the header image.
             </ThemedText>
           ),

@@ -1,7 +1,7 @@
 import { SiliconUIProvider } from "@/theme";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
+import { ToastWrapper } from "../package/toast/provider/ToastWrapper";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -10,14 +10,15 @@ export const unstable_settings = {
 export default function RootLayout() {
   return (
     <SiliconUIProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="modal"
-          options={{ presentation: "modal", title: "Modal" }}
-        />
-      </Stack>
-      <StatusBar style="auto" />
+      <ToastWrapper>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="modal"
+            options={{ presentation: "modal", title: "Modal" }}
+          />
+        </Stack>
+      </ToastWrapper>
     </SiliconUIProvider>
   );
 }
